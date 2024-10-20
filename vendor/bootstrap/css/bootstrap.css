@@ -1,0 +1,123 @@
+/* Variabel CSS */
+:root {
+  /* Warna */
+  --blue: #007bff;
+  --gray: #6c757d;
+  --white: #fff;
+}
+
+/* Reset dan Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Pengaturan Font dan Body */
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--white);
+}
+
+/* Pengaturan Flexbox */
+.isotope-box {
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  flex-wrap: wrap; /* Membungkus item jika tidak muat */
+  justify-content: center; /* Menyusun item di tengah */
+}
+
+/* Gaya Item yang Seragam */
+.isotope-item {
+  width: 200px; /* Lebar konsisten untuk setiap kotak */
+  height: 200px; /* Tinggi tetap untuk semua kotak */
+  margin: 5px; /* Jarak antar kotak */
+  overflow: hidden; /* Menyembunyikan bagian yang keluar */
+  position: relative; /* Agar posisi absolut dalam figcaption berfungsi */
+  display: flex; /* Mengizinkan pemusatan konten */
+  justify-content: center; /* Rata tengah secara horizontal */
+  align-items: center; /* Rata tengah secara vertikal */
+}
+
+/* Gaya Snip1321 */
+.snip1321 {
+  position: relative; /* Memungkinkan kontrol posisi */
+  overflow: hidden; /* Menyembunyikan gambar yang melebihi */
+  width: 100%; /* Responsif terhadap lebar item */
+  height: 100%; /* Menyesuaikan dengan tinggi item */
+  transition: all 0.3s ease; /* Transisi halus untuk efek hover */
+}
+
+.snip1321 img {
+  width: 100%; /* Gambar responsif */
+  height: 100%; /* Menyesuaikan dengan tinggi item */
+  object-fit: cover; /* Mempertahankan rasio aspek gambar */
+}
+
+/* Gaya Figcaption */
+.snip1321 figcaption {
+  position: absolute; /* Posisi absolut untuk overlay */
+  bottom: 0; /* Menempatkan di bagian bawah */
+  left: 0; /* Menyentuh sisi kiri */
+  right: 0; /* Menyentuh sisi kanan */
+  padding: 10px; /* Ruang di dalam figcaption */
+  background: rgba(0, 0, 0, 0.7); /* Latar belakang gelap dengan transparansi */
+  color: white; /* Teks berwarna putih */
+  transition: all 0.3s ease; /* Transisi halus untuk hover */
+}
+
+.snip1321:hover figcaption {
+  background: rgba(0, 0, 0, 0.9); /* Gelapkan latar belakang saat hover */
+}
+
+/* Tabel dan Tombol (jika diperlukan) */
+table {
+  border-collapse: collapse; /* Menghilangkan jarak antar border */
+  width: 100%; /* Lebar tabel penuh */
+}
+
+th,
+td {
+  padding: 0.75rem; /* Ruang di dalam sel tabel */
+  border: 1px solid #dee2e6; /* Border untuk sel tabel */
+}
+
+button {
+  border-radius: 0; /* Sudut kotak */
+  transition: background-color 0.3s ease; /* Transisi untuk perubahan latar belakang */
+}
+
+/* Kontainer Responsif */
+.container {
+  width: 100%; /* Lebar penuh */
+  padding: 0 15px; /* Ruang samping */
+  margin: 0 auto; /* Pusatkan kontainer */
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px; /* Lebar maksimum untuk layar lebih besar */
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}

@@ -1,0 +1,212 @@
+/* Owl Carousel Styles */
+.owl-carousel {
+  display: none; /* Sembunyikan carousel secara default */
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y; /* Mendukung sentuhan di perangkat mobile */
+  touch-action: manipulation;
+  -moz-backface-visibility: hidden; /* Menghindari efek backface */
+}
+
+.owl-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both; /* Bersihkan float */
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden; /* Sembunyikan konten yang melampaui batas */
+  -webkit-transform: translate3d(0px, 0px, 0px); /* Dukungan untuk transformasi 3D */
+}
+
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden; /* Menghindari efek backface */
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0); /* Dukungan untuk transformasi 3D */
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px; /* Minimal tinggi item */
+  float: left; /* Mengatur item untuk melayang ke kiri */
+}
+
+.owl-carousel .owl-item img {
+  display: block; /* Menampilkan gambar sebagai blok */
+  width: 100%; /* Mengatur lebar gambar */
+}
+
+/* Navigasi dan Dots */
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
+  display: none; /* Sembunyikan navigasi dan dots jika tidak diaktifkan */
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-dot {
+  cursor: pointer; /* Ubah kursor menjadi pointer */
+  user-select: none; /* Nonaktifkan seleksi teks */
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  background: none; /* Tanpa latar belakang */
+  color: inherit; /* Warna mengikuti elemen induk */
+  border: none; /* Tanpa border */
+  padding: 0 !important; /* Tanpa padding */
+  font: inherit; /* Menggunakan font induk */
+}
+
+/* Status Carousel */
+.owl-carousel.owl-loaded {
+  display: block; /* Tampilkan carousel ketika sudah dimuat */
+}
+
+.owl-carousel.owl-loading {
+  opacity: 0; /* Sembunyikan carousel saat loading */
+  display: block; /* Tetap tampil saat loading */
+}
+
+.owl-carousel.owl-hidden {
+  opacity: 0; /* Sembunyikan carousel */
+}
+
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden; /* Sembunyikan item saat refresh */
+}
+
+.owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: pan-y; /* Mendukung sentuhan di perangkat mobile */
+  touch-action: pan-y;
+  user-select: none; /* Nonaktifkan seleksi teks */
+}
+
+.owl-carousel.owl-grab {
+  cursor: move; /* Ubah kursor menjadi move */
+  cursor: grab; /* Ubah kursor menjadi grab */
+}
+
+.owl-carousel.owl-rtl {
+  direction: rtl; /* Mengatur arah teks dari kanan ke kiri */
+}
+
+.owl-carousel.owl-rtl .owl-item {
+  float: right; /* Mengatur item untuk melayang ke kanan */
+}
+
+/* No JS Styles */
+.no-js .owl-carousel {
+  display: block; /* Tampilkan carousel jika JavaScript tidak tersedia */
+}
+
+/* Owl Carousel - Animate Plugin */
+.owl-carousel .animated {
+  animation-duration: 1000ms; /* Durasi animasi */
+  animation-fill-mode: both; /* Mengisi animasi */
+}
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; /* Z-index untuk animasi masuk */
+}
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; /* Z-index untuk animasi keluar */
+}
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut; /* Nama animasi fade out */
+}
+
+/* Keyframes untuk Fade Out */
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* Opacity awal */
+  }
+  100% {
+    opacity: 0; /* Opacity akhir */
+  }
+}
+
+/* Owl Carousel - Auto Height Plugin */
+.owl-height {
+  transition: height 500ms ease-in-out; /* Transisi tinggi */
+}
+
+/* Owl Carousel - Lazy Load Plugin */
+.owl-carousel .owl-item {
+}
+
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0; /* Opacity awal untuk gambar lazy load */
+  transition: opacity 400ms ease; /* Transisi opasitas */
+}
+
+.owl-carousel .owl-item .owl-lazy[src^=""],
+.owl-carousel .owl-item .owl-lazy:not([src]) {
+  max-height: 0; /* Tinggi maksimal untuk gambar lazy load */
+}
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d; /* Dukungan untuk transformasi 3D */
+}
+
+/* Owl Carousel - Video Plugin */
+.owl-carousel .owl-video-wrapper {
+  position: relative; /* Mengatur posisi wrapper video */
+  height: 100%; /* Tinggi wrapper video */
+  background: #000; /* Latar belakang wrapper video */
+}
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute; /* Mengatur posisi ikon play */
+  height: 80px; /* Tinggi ikon play */
+  width: 80px; /* Lebar ikon play */
+  left: 50%; /* Mengatur posisi kiri ikon play */
+  top: 50%; /* Mengatur posisi atas ikon play */
+  margin-left: -40px; /* Margin kiri ikon play */
+  margin-top: -40px; /* Margin atas ikon play */
+  background: url("owl.video.play.png") no-repeat; /* Gambar ikon play */
+  cursor: pointer; /* Ubah kursor menjadi pointer */
+  z-index: 1; /* Z-index untuk ikon play */
+  transition: transform 100ms ease; /* Transisi transformasi */
+}
+
+.owl-carousel .owl-video-play-icon:hover {
+  transform: scale(1.3, 1.3); /* Ubah skala ikon play saat hover */
+}
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none; /* Sembunyikan thumbnail dan ikon play saat video sedang diputar */
+}
+
+.owl-carousel .owl-video-tn {
+  opacity: 0; /* Opacity awal untuk thumbnail */
+  height: 100%; /* Tinggi thumbnail */
+  background-position: center center; /* Posisi latar belakang thumbnail */
+  background-repeat: no-repeat; /* Mengulang latar belakang thumbnail */
+  background-size: contain; /* Ukuran latar belakang thumbnail */
+  transition: opacity 400ms ease; /* Transisi opasitas */
+}
+
+.owl-carousel .owl-video-frame {
+  position: relative; /* Mengatur posisi frame video */
+  z-index: 1; /* Z-index untuk frame video */
+  height: 100%; /* Tinggi frame video */
+  width: 100%; /* Lebar frame video */
+}
