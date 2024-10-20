@@ -6,6 +6,6 @@ Welcome to my portfolio! I am passionate about technology and environmental scie
 Access my portfolio ini [here](https://lamberthrumpaidus.netlify.app/)
 
 ## 📫 Contact
-Feel free to reach out to me on GitHub: [github.com/lamberthrumpaidus](https://github.com/lamberthrumpaidus)
+Feel free to reach out to [me](https://github.com/lamberthrumpaidus)
 
 I look forward to connecting with you!
