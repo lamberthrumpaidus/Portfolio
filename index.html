@@ -422,20 +422,20 @@
           <span id="musicTrackSub" style="font-size:11px;color:#a5b7c5;">TANYA.mp3</span>
         </div>
       </div>
-      <div class="music-playlist" style="display:flex;gap:6px;margin:12px 0 6px;">
-        <button type="button" class="track-btn active" data-track="0" title="1. Tanya Rasa" style="flex:1;background:rgba(255,255,255,.12);border:1px solid #c2f87d;border-radius:8px;padding:6px 8px;font-size:10px;color:#fff;cursor:pointer;font-family:inherit;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">1. Tanya Rasa</button>
-        <button type="button" class="track-btn" data-track="1" title="2. Balik Arah dan Menepi" style="flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:6px 8px;font-size:10px;color:#9db2bf;cursor:pointer;font-family:inherit;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">2. Balik Arah dan Menepi</button>
+      <div class="music-playlist">
+        <button type="button" class="track-btn active" data-track="0" title="1. Tanya Rasa">1. Tanya Rasa</button>
+        <button type="button" class="track-btn" data-track="1" title="2. Balik Arah dan Menepi">2. Balik Arah dan Menepi</button>
       </div>
-      <p class="music-status" id="musicStatus" style="font-size:11px;color:#9db2bf;margin:6px 0 10px;line-height:1.4;">Klik putar untuk mendengarkan.</p>
+      <p class="music-status" id="musicStatus">Klik putar untuk mendengarkan.</p>
       <audio id="musicAudio" preload="metadata" autoplay loop src="TANYA.mp3"></audio>
       <div class="music-controls">
-        <button type="button" id="musicPrev" aria-label="Lagu sebelumnya" title="Lagu sebelumnya" style="width:34px;height:34px;font-size:12px;">⏮</button>
+        <button type="button" id="musicPrev" aria-label="Lagu sebelumnya" title="Lagu sebelumnya">⏮</button>
         <button type="button" id="musicPlay" aria-label="Putar lagu">▶</button>
-        <button type="button" id="musicNext" aria-label="Lagu berikutnya" title="Lagu berikutnya" style="width:34px;height:34px;font-size:12px;">⏭</button>
+        <button type="button" id="musicNext" aria-label="Lagu berikutnya" title="Lagu berikutnya">⏭</button>
         <div class="music-timeline"><input type="range" id="musicSeek" min="0" max="100" value="0"
             aria-label="Posisi lagu"><span id="musicTime">0:00 / 0:00</span></div>
       </div>
-      <div class="music-bottom" style="justify-content: flex-end;">
+      <div class="music-bottom">
         <label class="music-volume">Volume <input type="range" id="musicVolume" min="0" max="1" step="0.05" value="0.65"></label>
       </div>
     </div>
