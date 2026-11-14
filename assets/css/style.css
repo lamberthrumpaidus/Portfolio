@@ -259,3 +259,31 @@ dialog{color:var(--text)}dialog::backdrop{background:rgba(2,9,12,.8);backdrop-fi
   .music-widget .music-playlist {flex-wrap: wrap;}
   .music-widget .music-playlist .track-btn {min-width: 0;}
 }
+
+
+/* Profil & prinsip kerja — jelas terpisah, fleksibel pada HP */
+.about .portrait-wrap{position:relative; isolation:isolate; overflow:visible;}
+.about .portrait-wrap::before{content:none !important;}
+.about .portrait-frame{border-radius:clamp(16px,3vw,24px); overflow:hidden; outline:1px solid var(--lineStrong); outline-offset:0; background:var(--surface);}
+.about .portrait-frame>img{display:block; width:100%; height:auto; object-fit:contain; object-position:center;}
+.about .portrait-wrap figcaption{margin-top:20px; display:flex; align-items:flex-start; justify-content:space-between; gap:12px 22px; flex-wrap:wrap;}
+.about .portrait-wrap figcaption .photo-num{font-size:11px; color:var(--mint); letter-spacing:.1em;}
+.values-intro{margin-top:clamp(58px,8vw,110px); max-width:800px; padding-top:30px; border-top:1px solid var(--lineStrong);}
+.values-kicker{font-size:11px; font-weight:800; letter-spacing:.16em; color:var(--mint);}
+.values-intro h3{font-family:var(--display); font-size:clamp(25px,3vw,41px); letter-spacing:-.035em; line-height:1.2; margin:10px 0; color:var(--text);}
+.values-intro p{font-size:14px; line-height:1.75; color:var(--muted); margin:0; max-width:660px;}
+.about .values-strip{margin-top:25px; border-top:0; gap:12px;}
+.about .values-strip>div{border:1px solid var(--line); background:var(--surface); border-radius:16px; padding:20px 22px; min-width:0;}
+.about .values-strip>div+div{border-left:1px solid var(--line); padding-left:22px; border-top:1px solid var(--line);}
+.about .values-strip h3{font-size:clamp(21px,2vw,26px);}
+@media(max-width:720px){
+ .about .portrait-wrap{width:100%; max-width:100%; margin:0;}
+ .about .portrait-frame{width:100%; height:auto;}
+ .about .portrait-frame>img{width:100%; height:auto; max-height:none;}
+ .about .portrait-wrap figcaption{margin:16px 0 0; font-size:12px;}
+ .values-intro{margin-top:60px; padding-top:26px;}
+ .values-intro p{font-size:13px;}
+ .about .values-strip{display:grid; grid-template-columns:1fr; gap:12px; margin-top:22px;}
+ .about .values-strip>div,.about .values-strip>div+div{padding:18px 20px;}
+ .about .values-strip h3{margin:7px 0;}
+}
