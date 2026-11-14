@@ -168,3 +168,94 @@ dialog{color:var(--text)}dialog::backdrop{background:rgba(2,9,12,.8);backdrop-fi
   .hero-art{height:290px}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* FINAL MOBILE PHOTO + PLAYER FIX — keep the original design */
+.about .portrait-wrap {
+  width: 100%;
+  max-width: 510px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+/* The old offset outline was wider than the portrait on phones. */
+.about .portrait-wrap::before {
+  inset: -10px;
+  border-radius: 25px;
+  z-index: -1;
+}
+.about .portrait-frame,
+.about .portrait-frame > img {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+.about .portrait-frame {
+  height: auto;
+  aspect-ratio: auto;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.about .portrait-frame > img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+.about .portrait-wrap figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 8px 15px;
+  line-height: 1.55;
+}
+@media(max-width:720px){
+  .about .portrait-wrap {
+    width: calc(100% - 16px);
+    max-width: none;
+    margin: 0 auto;
+  }
+  .about .portrait-wrap::before {
+    inset: -8px;
+    border-radius: 24px;
+  }
+  .about .portrait-frame {border-radius: 17px;}
+  .about .portrait-wrap figcaption {margin-top: 21px;}
+  .values-strip {margin-top: 44px;}
+  .about {padding-bottom: 80px;}
+  /* Small unobtrusive music button instead of the wide Now Playing banner. */
+  .music-widget {
+    right: max(12px,env(safe-area-inset-right,0px));
+    bottom: calc(15px + env(safe-area-inset-bottom,0px));
+    width: auto;
+    max-width: min(340px,calc(100vw - 24px));
+    z-index: 90;
+  }
+  .music-widget .music-toggle {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+    border-radius: 50%;
+    padding: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0;
+    box-shadow: 0 4px 18px rgba(0,0,0,.32);
+  }
+  .music-widget .music-toggle-label {display:none;}
+  .music-widget .music-equalizer {font-size: 23px;line-height: 1;}
+  .music-widget.expanded {
+    left: auto;
+    width: min(330px,calc(100vw - 24px));
+  }
+  .music-widget .music-details {
+    width: 100%;
+    max-height: min(65dvh,510px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .music-widget .music-playlist {flex-wrap: wrap;}
+  .music-widget .music-playlist .track-btn {min-width: 0;}
+}
