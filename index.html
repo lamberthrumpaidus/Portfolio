@@ -13,45 +13,36 @@
   <meta property="og:description" content="Bukan sekadar kode. Karya, proses, dan solusi yang bisa dieksplorasi.">
   <meta property="og:image" content="assets/images/portrait.webp">
   <title>Lamberth Rumpaidus — Digital Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/mark.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-lr-favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Koreksi monogram L/R: satu baris di dalam kotak, tanpa mengubah musik atau layout lain. -->
-  <style>
-    .site-header .brand .brand-mark {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      flex: 0 0 49px;
-      width: 49px;
-      height: 49px;
-      white-space: nowrap !important;
-      overflow: hidden;
-      line-height: 1 !important;
-      letter-spacing: -1px;
-      font-size: 18px;
-      vertical-align: middle;
-    }
-    .site-header .brand .brand-mark .brand-accent {
-      display: inline;
-      flex: 0 0 auto;
-      margin: 0 1px;
-    }
-    @media (max-width: 720px) {
-      .site-header .brand .brand-mark {
-        flex-basis: 44px;
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
-      }
-    }
-  </style>
   <script src="assets/js/data.js" defer></script>
   <script src="assets/js/app.js" defer></script>
+
+  <style>
+    /* Logo update */
+    .brand-mark{padding:0;overflow:hidden;display:grid;place-items:center;background:rgba(255,255,255,.02)}
+    .brand-logo-img{display:block;width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 3px 10px rgba(0,0,0,.18))}
+    .art-core{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px}
+    .art-core-logo{display:block;width:min(78%,300px);height:auto;object-fit:contain;filter:drop-shadow(0 8px 26px rgba(0,0,0,.22))}
+    .art-core>small{letter-spacing:.18em;text-align:center}
+    .footer-logo{display:inline-flex;align-items:center;justify-content:center}
+    .footer-logo-img{display:block;height:48px;width:auto;object-fit:contain}
+    .dialog-logo{display:inline-flex;align-items:center;gap:10px}
+    .dialog-logo-img{display:block;height:28px;width:auto;object-fit:contain}
+    @media (max-width:720px){
+      .brand-mark{width:44px;height:44px;flex:0 0 44px}
+      .brand-logo-img{width:88%;height:88%}
+      .art-core{padding:14px;gap:6px}
+      .art-core-logo{width:min(82%,220px)}
+      .footer-logo-img{height:40px}
+      .dialog-logo-img{height:24px}
+    }
+  </style>
 </head>
 
 <body>
@@ -63,7 +54,7 @@
   <header class="site-header" id="siteHeader">
     <div class="nav-shell wrap">
       <a class="brand" href="#top" aria-label="Lamberth — Beranda">
-        <span class="brand-mark">L<span class="brand-accent">/</span>R</span>
+        <span class="brand-mark" aria-hidden="true"><img class="brand-logo-img" src="assets/images/logo-lr-web.png" alt=""></span>
         <span class="brand-copy"><strong>LAMBERTH</strong><small>CREATIVE DEVELOPER</small></span>
       </a>
       <nav class="primary-nav" id="primaryNav" aria-label="Navigasi utama">
@@ -119,7 +110,8 @@
           </div>
           <div class="hero-footnote"><span class="tiny-avatar"><img src="assets/images/portrait.webp"
                 alt="Foto Lamberth" width="38" height="38"></span>
-            <div><strong data-i18n="hero.name">Lamberth Rumpaidus</strong><span data-i18n="hero.location">Yogyakarta · Indonesia</span></div><span class="footnote-line"></span>
+            <div><strong data-i18n="hero.name">Lamberth Rumpaidus</strong><span data-i18n="hero.location">Manokwari,
+                Papua Barat · Indonesia</span></div><span class="footnote-line"></span>
             <div><strong>08 <span data-i18n="hero.works">KARYA</span></strong><span
                 data-i18n="hero.documented">Terdokumentasi</span></div>
           </div>
@@ -135,7 +127,7 @@
           <div class="art-star star-b"></div>
           <div class="art-star star-c"></div>
           <div class="art-core">
-            <div class="core-decoration"></div><span>L<span>/</span>R</span><small>CREATIVE ENGINEERING</small>
+            <div class="core-decoration"></div><img class="art-core-logo" src="assets/images/logo-lr-web.png" alt="Logo Lamberth Rumpaidus"><small>CREATIVE ENGINEERING</small>
           </div>
           <div class="floating-stat float-one"><span class="float-icon">{ }</span>
             <div><strong>WEB / UI</strong><small>BUILD WITH PURPOSE</small></div>
@@ -145,7 +137,7 @@
           </div>
           <div class="art-corner corner-tl"></div>
           <div class="art-corner corner-br"></div>
-          <span class="art-coordinate co-top">YOGYAKARTA</span><span class="art-coordinate co-bottom">INDONESIA</span>
+          <span class="art-coordinate co-top">6.767° S</span><span class="art-coordinate co-bottom">134.063° E</span>
         </div>
       </div>
       <a class="scroll-prompt" href="#about"><span class="scroll-prompt-line"></span><span
@@ -177,35 +169,33 @@
               komputasi interaktif, dan pendekatan keamanan web. Setiap proyek menjadi ruang eksperimen untuk merancang,
               membangun, menguji, lalu memperbaiki ide menjadi karya nyata.</p>
             <div class="about-metadata">
-              <div><span data-i18n="about.studyLabel">LATAR AKADEMIK</span><strong data-i18n="about.study">Teknik Informatika · Universitas Amikom Yogyakarta</strong></div>
+              <div><span data-i18n="about.studyLabel">LATAR AKADEMIK</span><strong data-i18n="about.study">Teknik
+                  Informatika · Universitas Papua</strong></div>
               <div><span data-i18n="about.focusLabel">AREA MINAT</span><strong data-i18n="about.focus">Web Development /
                   UI / Cybersecurity</strong></div>
-              <div><span data-i18n="about.basedLabel">BERBASIS DI</span><strong data-i18n="about.based">Yogyakarta · Indonesia</strong></div>
+              <div><span data-i18n="about.basedLabel">BERBASIS DI</span><strong data-i18n="about.based">Manokwari ·
+                  Papua Barat</strong></div>
             </div>
           </div>
           <figure class="portrait-wrap reveal">
-            <div class="portrait-frame"><img src="assets/images/portrait.webp" loading="lazy" width="900" height="899"
+            <div class="portrait-frame"><img src="assets/images/portrait.webp" loading="lazy" width="700" height="700"
                 alt="Potret Lamberth di depan sebuah gedung"><span class="portrait-glare"></span></div>
-            <figcaption><span class="photo-num" data-i18n="about.portrait">PROFIL</span><span data-i18n="about.caption">Lamberth Paulinus Rumpaidus</span></figcaption>
+            <figcaption><span class="photo-num">01 / HUMAN SIDE</span><span data-i18n="about.caption">Di balik setiap
+                baris kode, selalu ada rasa ingin tahu.</span></figcaption>
           </figure>
-        </div>
-        <div class="values-intro reveal" aria-labelledby="valuesTitle">
-          <span class="values-kicker" data-i18n="about.principlesLabel">PENDEKATAN KERJA</span>
-          <h3 id="valuesTitle" data-i18n="about.principlesTitle">Metode pengembangan proyek</h3>
-          <p data-i18n="about.principlesDesc">Setiap proyek melalui proses dokumentasi, pengujian, dan evaluasi untuk menghasilkan solusi yang dapat dikembangkan.</p>
         </div>
         <div class="values-strip reveal">
           <div><span class="value-glyph">01</span>
             <h3 data-i18n="about.value1">Dokumentasi</h3>
-            <p data-i18n="about.value1desc">Mencatat kebutuhan, implementasi, dan hasil proyek secara sistematis.</p>
+            <p data-i18n="about.value1desc">Karya dan proses tercatat, bukan hanya diklaim.</p>
           </div>
           <div><span class="value-glyph">02</span>
             <h3 data-i18n="about.value2">Eksperimen</h3>
-            <p data-i18n="about.value2desc">Menguji alternatif solusi dan menyempurnakan implementasi.</p>
+            <p data-i18n="about.value2desc">Belajar melalui prototipe, iterasi, dan hasil.</p>
           </div>
           <div><span class="value-glyph">03</span>
             <h3 data-i18n="about.value3">Refleksi</h3>
-            <p data-i18n="about.value3desc">Mengevaluasi hasil untuk menentukan langkah perbaikan berikutnya.</p>
+            <p data-i18n="about.value3desc">Melihat apa yang berhasil dan dapat ditingkatkan.</p>
           </div>
         </div>
       </div>
@@ -333,7 +323,7 @@
             <h2 id="contactTitle" data-i18n="contact.title">Punya ide?<br><em>Wujudkan bersama.</em></h2>
             <p data-i18n="contact.desc">Kolaborasi, proyek, diskusi teknologi, atau sekadar menyapa. Saya senang
               bertukar perspektif tentang produk digital.</p><a class="big-email"
-              href="mailto:lamberthpaulinusrumpaidus@gmail.com">lamberthpaulinusrumpaidus@gmail.com <svg class="ico">
+              href="mailto:lamberthrumpaidus@gmail.com">lamberthrumpaidus@gmail.com <svg class="ico">
                 <use href="#ico-arrow"></use>
               </svg></a><button class="copy-email" type="button" id="copyEmail"><svg class="ico">
                 <use href="#ico-copy"></use>
@@ -364,15 +354,15 @@
         </div>
         <div class="social-bar reveal"><span data-i18n="contact.find">TEMUKAN SAYA</span>
           <div><a href="https://github.com/LamberthRumpaidus" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a
-              href="https://www.linkedin.com/in/lamberth-rumpaidus-99343a2b4" target="_blank"
-              rel="noopener noreferrer">LinkedIn ↗</a><a href="https://me.developers.google.com/u/lamberthrumpaidus" target="_blank" rel="noopener noreferrer">Google Developer ↗</a><a href="https://www.instagram.com/tech_vigilante/"
+              href="https://www.linkedin.com/in/lamberth-paulinus-rumpaidus-b60a2b298/" target="_blank"
+              rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/tech_vigilante/"
               target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
         </div>
       </div>
     </section>
   </main>
   <footer class="footer">
-    <div class="wrap footer-grid"><a class="footer-logo" href="#top">L<span>/</span>R</a>
+    <div class="wrap footer-grid"><a class="footer-logo" href="#top" aria-label="Kembali ke atas"><img class="footer-logo-img" src="assets/images/logo-lr-web.png" alt="Logo Lamberth Rumpaidus"></a>
       <div><strong data-i18n="footer.head">Dibuat dengan rasa ingin tahu.</strong>
         <p data-i18n="footer.body">Dirancang dan dikembangkan sebagai portofolio digital. © 2026 Lamberth Paulinus
           Rumpaidus.</p>
@@ -384,7 +374,7 @@
 
   <dialog class="case-dialog" id="projectDialog" aria-labelledby="dialogTitle">
     <div class="dialog-inner">
-      <div class="dialog-top"><span class="dialog-logo">L/R <small>CASE STUDY</small></span><button
+      <div class="dialog-top"><span class="dialog-logo"><img class="dialog-logo-img" src="assets/images/logo-lr-web.png" alt="Logo Lamberth Rumpaidus"><small>CASE STUDY</small></span><button
           class="dialog-close icon-button" type="button" id="dialogClose" aria-label="Tutup detail proyek"><svg
             class="ico">
             <use href="#ico-x"></use>
@@ -415,7 +405,7 @@
   </dialog>
 
   <aside class="music-widget" id="musicPanel" aria-label="Pemutar musik: Tanya Rasa &amp; Balik Arah dan Menepi">
-    <button class="music-toggle" id="musicToggle" type="button" aria-label="Buka atau tutup pemutar musik" aria-expanded="false" aria-controls="musicDetails"
+    <button class="music-toggle" id="musicToggle" type="button" aria-expanded="false" aria-controls="musicDetails"
       title="Buka pemutar musik"><span class="music-equalizer">♫</span><span class="music-toggle-label">NOW
         PLAYING</span></button>
     <div class="music-details" id="musicDetails">
@@ -431,7 +421,7 @@
         <button type="button" class="track-btn" data-track="1" title="2. Balik Arah dan Menepi" style="flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:6px 8px;font-size:10px;color:#9db2bf;cursor:pointer;font-family:inherit;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">2. Balik Arah dan Menepi</button>
       </div>
       <p class="music-status" id="musicStatus" style="font-size:11px;color:#9db2bf;margin:6px 0 10px;line-height:1.4;">Klik putar untuk mendengarkan.</p>
-      <audio id="musicAudio" preload="metadata" autoplay loop src="TANYA.mp3"></audio>
+      <audio id="musicAudio" preload="metadata" src="TANYA.mp3"></audio>
       <div class="music-controls">
         <button type="button" id="musicPrev" aria-label="Lagu sebelumnya" title="Lagu sebelumnya" style="width:34px;height:34px;font-size:12px;">⏮</button>
         <button type="button" id="musicPlay" aria-label="Putar lagu">▶</button>
@@ -440,7 +430,7 @@
             aria-label="Posisi lagu"><span id="musicTime">0:00 / 0:00</span></div>
       </div>
       <div class="music-bottom"><label class="music-upload">+ Pilih audio<input type="file" id="musicFile"
-            accept=".mp3,.mp4,audio/mpeg,audio/mp4,video/mp4" hidden></label><label class="music-volume">Volume <input type="range" id="musicVolume"
+            accept="audio/*" hidden></label><label class="music-volume">Volume <input type="range" id="musicVolume"
             min="0" max="1" step="0.05" value="0.65"></label></div>
     </div>
   </aside>
@@ -498,92 +488,6 @@
       <path d="m6 9 3 3-3 3m6 0h6" />
     </symbol>
   </svg>
-
-  <!-- Musik otomatis: dicoba saat terbuka; bila diblokir browser,
-       diputar saat interaksi pertama di luar kontrol pemutar musik. -->
-  <script>
-    (() => {
-      document.addEventListener("DOMContentLoaded", () => {
-        const audio = document.getElementById("musicAudio");
-        const player = document.getElementById("musicPanel");
-        const status = document.getElementById("musicStatus");
-        if (!audio) return;
-
-        audio.loop = true;
-        let activated = false;
-        let manualControl = false;
-        let pendingAttempt = false;
-
-        const removeFallback = () => {
-          document.removeEventListener("pointerdown", onInteraction, true);
-          document.removeEventListener("keydown", onInteraction, true);
-        };
-
-        function onInteraction(event) {
-          if (manualControl || !audio.paused) {
-            removeFallback();
-            return;
-          }
-          // Tombol musik memakai event handler sendiri. Jangan membuat
-          // klik Play berubah menjadi Play lalu Pause secara bersamaan.
-          if (event.target instanceof Element &&
-              event.target.closest("#musicPanel")) {
-            manualControl = true;
-            removeFallback();
-            return;
-          }
-          if (event.type === "keydown" &&
-              ["Shift", "Control", "Alt", "Meta"].includes(event.key)) return;
-
-          startMusic();
-        }
-
-        function startMusic() {
-          if (manualControl || pendingAttempt || !audio.paused) return;
-          pendingAttempt = true;
-          let result;
-          try {
-            result = audio.play();
-          } catch {
-            pendingAttempt = false;
-            return;
-          }
-          Promise.resolve(result).then(() => {
-            activated = true;
-            pendingAttempt = false;
-            removeFallback();
-            if (status) status.textContent = "Sedang memutar musik.";
-          }).catch((error) => {
-            pendingAttempt = false;
-            if (error?.name === "NotAllowedError") {
-              if (status) status.textContent =
-                "Musik akan mulai saat kamu menyentuh halaman.";
-              document.addEventListener("pointerdown", onInteraction, true);
-              document.addEventListener("keydown", onInteraction, true);
-            }
-            // Jika MP3 tidak ditemukan, biarkan pengendali audio asli
-            // menampilkan pesan kesalahan, tanpa memaksa pemutaran.
-          });
-        }
-
-        audio.addEventListener("playing", () => {
-          activated = true;
-          removeFallback();
-        });
-
-        // Bila pemutar telah dibuka dan tombolnya dipakai, hormati
-        // keputusan pengunjung; jangan memulai kembali otomatis.
-        document.getElementById("musicPlay")?.addEventListener(
-          "click", () => {
-            manualControl = true;
-            removeFallback();
-          }, { capture: true }
-        );
-
-        startMusic();
-      });
-    })();
-  </script>
 </body>
 
 </html>
