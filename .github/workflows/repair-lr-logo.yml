@@ -1,0 +1,49 @@
+name: Repair original LR creator monogram
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/repair_lr_logo.py"
+      - ".github/workflows/repair-lr-logo.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: portfolio-creator-logo-repair
+  cancel-in-progress: false
+jobs:
+  rebuild-logo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image processing libraries
+        run: python -m pip install --disable-pip-version-check pillow numpy
+      - name: Create cleaned transparent creator logo from existing original
+        run: python scripts/repair_lr_logo.py
+      - name: Validate output PNG shape and alpha
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          p=Path("assets/images/lr-credit-logo-v2.png")
+          im=Image.open(p)
+          assert im.format=="PNG" and im.mode=="RGBA"
+          assert im.width>=350 and im.height>=200
+          assert p.stat().st_size>4000
+          print("Validated creator PNG",im.size,p.stat().st_size)
+          PY
+      - name: Commit repaired asset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images/lr-credit-logo-v2.png
+          if git diff --cached --quiet; then
+            echo "Logo file already current"
+          else
+            git commit -m "fix(branding): restore complete LR creator logo using original high-res image"
+            git push origin HEAD:main
+          fi
